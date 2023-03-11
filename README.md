@@ -1,2 +1,2 @@
 # 01019_Discrete_Mathematics
-01019 Discrete Mathematics Fall 22
+Solutions to the assignments for the course 01019 Discrete Mathematics (Fall 22) at DTU. Unfortunately the assignment file for the 3rd homework is not available.
