@@ -1,2 +1,3 @@
 *.pdf linguist-detectable=false
 *.tex linguist-detectable=true
+*.png linguist-detectable=false
