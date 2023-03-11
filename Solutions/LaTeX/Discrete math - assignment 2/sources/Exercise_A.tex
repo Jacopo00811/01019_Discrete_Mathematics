@@ -1,0 +1,28 @@
+\section{Exercise A}
+
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\begin{enumerate}
+    \item All students are honest: \\
+    $\forall x(S(x) \to H(x))$ %(For all x, it is the case that if x is a student, then x is honest)
+   
+    \item All students are dishonest: \\
+    $\forall x(S(x) \to \neg H(x))$ %(For all x, it is the case that if x is a student, then x is dishonest)
+   
+    \item Not all students are honest: \\
+    $\neg \forall x(S(x) \to H(x))$ %(It is not the case that for all x, if x is a student, then x is honest)
+   
+    \item Not all students are dishonest: \\
+    $\neg \forall x(S(x) \to \neg H(x))$ %(It is not the case that for all x, if x is a student, then x is dishonest)
+   
+    \item Some students are honest: \\
+    $\exists x(S(x) \land H(x))$ %(There exists some x where x is a student and x is honest)
+    
+    \item Some students are dishonest: \\
+    $\exists x(S(x) \land \neg H(x))$ %(There exists some x where x is a student and x is not honest)
+   
+    \item No students are honest: \\
+    $\neg \exists x(S(x) \land H(x))$ %(Re formulation of 2)
+    
+    \item No students are dishonest: \\
+    $\neg \exists x(S(x) \land \neg H(x))$ %(Re formulation of 1)
+\end{enumerate}

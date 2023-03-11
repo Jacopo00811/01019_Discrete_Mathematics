@@ -1,0 +1,47 @@
+\section{Exercise D}
+In order to show that the equalities hold we used propositional logic formulas and the truth table method.
+
+\begin{enumerate}[label=\alph*)]
+
+\item $ A \cup (B \cap C) = (A \cup B) \cap (A \cup C) $ \\
+Translated into propositional logic becomes: \\ 
+$ A \lor (B \land C) = (A \lor B) \land (A \lor C) $ \\
+To which we can apply the distributive property of $\lor$ over $\land$ on the left hand side: \\
+$ (A \lor B) \land (A \lor C) = (A \lor B) \land (A \lor C) $
+
+\item $ A-(A \cap B) = A-B $ \\
+Translated into propositional logic becomes: \\
+$ A \land \neg(A \land B) = A \land \neg B $ \\
+To which we can apply De Morgan's law on the left hand side: \\
+$ A \land (\neg A \lor \neg B) = A \land \neg B $ \\
+And then apply the distributive property of $\land$ over $\lor$ on the left hand side: \\
+$ (A \land \neg A) \lor (A \land \neg B) = A \land \neg B $ \\
+From here we can see that the block $(A \land \neg A)$ is always false, thus the following $\lor$ condition only depends on $A \land \neg B$. We can rewrite the equation in this form: \\
+$ A \land \neg B = A \land \neg B $ 
+
+\item $ A \cap (A \cup B) = A $  \\
+Translated into propositional logic becomes: \\
+$ A \land (A \lor B) = A $ \\
+From here we can already say that the formula $A \land (A \lor B)$ is true only when $A$ is true. As a proof we construct the table from which we can see that $A \land (A \lor B)$ gets a true value only when $A$ is set to true.
+
+\begin{center}
+\begin{tabular}{ |c|c||c|c| } 
+\hline
+A & B & $A \lor B$ & $A \land (A \lor B)$  \\
+\hline
+\hline
+T & T & T & T\\
+\hline
+T & F & T & T\\
+\hline
+F & T & T & F\\
+\hline
+F & F & F & F\\
+\hline
+\end{tabular}
+\end{center}
+
+ So the formula $A \land (A \lor B) = A$ is only dependent on A and can be rewritten as: \\
+ $A=A$.
+ 
+\end{enumerate}

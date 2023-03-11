@@ -1,0 +1,55 @@
+\section{Exercise 4.1}
+\renewcommand{\labelenumi}{\alph{enumi})}
+\begin{enumerate}
+\item
+We have to show the following holds by using induction:
+\[10^n \equiv 1^n \mbox{\hspace{0.25cm} (mod 9)}\]
+The first thing to determine, when using induction, is the base case. This is done by setting n = 0. Thus, the following occurs:
+\[10^0 \equiv 1^0 \mbox{\hspace{0.25cm} (mod 9)}\]
+\vspace{-8mm}
+\[1 \equiv 1 \mbox{\hspace{0.25cm} (mod 9)}\]
+
+It can now be seen that the base case is correct since 1 is equal to 1. In other words, 1 is congruent with itself, hence the relation holds for n = 0. Furthermore, before moving onwards to the induction step, recall the useful property: $10 \text{ mod } 9 \equiv 1 \text{ (mod 9)}$ as dividing 10 by 9 leaves a remainder of 1. Now, for the induction step, assume that it holds for n, that is:
+
+\vspace{-8mm}
+
+\begin{equation}
+    10^n \equiv 1^n \mbox{\hspace{0.25cm} (mod 9)}
+\end{equation}
+
+Now recall that $10 \text{ mod } 9 \equiv 1 \text{ (mod 9)}$:
+
+\begin{equation}
+    10^n \cdot 10 \equiv 1^n \cdot 10 \mbox{\hspace{0.25cm} (mod 9)}
+\end{equation}
+
+\vspace{-8mm}
+
+\begin{equation}
+    10^{n+1} \equiv 1^n \cdot 1 \mbox{\hspace{0.25cm} (mod 9)}
+\end{equation}
+
+\vspace{-8mm}
+
+\begin{equation}
+    10^{n+1} \equiv 1^{n+1} \mbox{\hspace{0.25cm} (mod 9)}
+\end{equation}
+
+Now, since the (n+1)th case is true whenever the nth case is true, and the 0th case is true, then the relation must hold for all $n \in \mathbb{N}$.
+
+\item
+Recall that every base 10 represented number can be described as follows:
+
+\begin{equation}
+    k = \sum_{i=0}^{n} d_{i} \cdot 10^{i}
+\end{equation}
+
+Where $d_{i}$ is the digit at the i'th position in the base-10 number ($d_{0}$ is the rightmost digit), and n denotes the number of digits in the number minus 1. Now apply the modulo of 9 to that equation:
+
+\begin{equation}
+    k \equiv \sum_{i=0}^{n} d_{i} \cdot 10^{i} \equiv \sum_{i=0}^{n} d_{i} \cdot 1^{i} \equiv \sum_{i=0}^{n} d_{i} \equiv \alpha \text{ (mod 9)}
+\end{equation}
+
+The substitution of $10^{i}$ with $1^{i}$ and $1^{i}$ with $1$ occurs in accordance with Lemma 5.4 part 2. From Part 1 of Exercise 4.1, we showed that any multiple of 10 can be reduced to 1 in mod 9, as such, the 10 multiplier disappears from the sum, yielding the digit sum from the original base-10 representation.
+
+\end{enumerate}

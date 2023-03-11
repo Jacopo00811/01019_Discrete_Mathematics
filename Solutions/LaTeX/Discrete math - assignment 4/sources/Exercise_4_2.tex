@@ -1,0 +1,98 @@
+\pagebreak
+\section{Exercise 4.2}
+\renewcommand{\labelenumi}{\alph{enumi})}
+\begin{enumerate}
+\item
+Recall, that the machine only accepts coins of type 2-krone and 5-krone. As such, the total weight must be describable by $59 \cdot x + 92 \cdot y = 7229$, where $x \in \mathbb{N} \land y \in \mathbb{N}$ as the value must be some sum of 2-krones and 5-krones. Now, take the mod 92 of the system: $59 \cdot x + 92 \cdot y \equiv 7229 \text{ (mod 92)}$. Using the hint from the exercise, it can be seen that the $92 \cdot y$ component should dissapear (as it has 92 as a factor) yielding the following relation:
+\begin{equation}
+    59 \cdot x \equiv 7229 \text{ (mod 92)}
+\end{equation}
+
+As can be seen, this is the same relation as the one presented in the exercise. Thus, since the congruence equation is derived from the fundamentals of what describe the situation in the question, the congruence relation must hold.
+
+\item
+Recall, when taking the modulo of a number (for instance $a \text{ mod z}$) the returned value should be the remainder of the integer division: $\frac{a}{z}$. When finding the remainder of 7229 when divided by 92, this yields 53. In fact, it can be shown that 7229 is a part of the 53rd residue class of 92, as: $7229 = 53 + 92 \cdot 78$. Hence, it must be the case that $59 \cdot x \equiv 53 \text{ (mod 92)}$ is equivalent to: $59 \cdot x \equiv 7229 \text{ (mod 92)}$.
+
+\item
+To solve this equation, it can be seen that:
+
+\begin{equation}
+    x \equiv 53 \cdot 59^{-1} \text{ (mod 92)}
+\end{equation}
+
+Hence, the modular inverse of 59 must be found. It can be found by finding a solution to the following congruence relation:
+
+\begin{equation}
+    59 \cdot a \equiv 1 \text{ (mod 92)}
+\end{equation}
+
+A solution to this equation can be found using the extended gcd method, that is, compute the extended gcd for gcd(92, 59):
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c||c|c|c|c|}
+\hline
+$k$ & $r_{k}$ & $q_{k}$ & $s_{k}$ & $t_{k}$\\
+\hline
+\hline
+0 & 92 & - & 1 & 0\\
+\hline
+1 & 59 & - & 0 & 1\\
+\hline
+2 & 33 & 1 & 1 & -1\\
+\hline
+3 & 26 & 1 & -1 & 2\\
+\hline
+4 & 7 & 1 & 2 & -3\\
+\hline
+5 & 5 & 3 & -7 & 11\\
+\hline
+6 & 2 & 1 & 9 & -14\\
+\hline
+7 & 1 & 2 & -25 & 39\\
+\hline
+8 & 0 & 2 & 59 & -92\\
+\hline
+\end{tabular}
+\end{table}
+
+From the above, the element $t_{k-1}$ should yield the inverse modulo value for 59, which is in this case: $t_{7} = 39$. Plugging this into the original equation regarding x: 
+
+\begin{equation}
+    x \equiv 53 \cdot 59^{-1} \equiv 53 \cdot 39 \equiv 43 \text{ (mod 92)}
+\end{equation}
+
+Now, since this is modular arithmetic, this means there are infinitely many solutions for x in this case, the only restriction being, that they must come from the 43rd residue class of mod 92, that is, the following is the solution space for x:
+
+\begin{equation}
+    x = 43 + 92 \cdot b \text{ where: } b \in \mathbb{Z}
+\end{equation}
+
+Verifying this claim, the value 43 is plugged back into the original equation:
+
+\begin{equation}
+    59 \cdot 43 = 2537 = 53 + 27 \cdot 92 \equiv 53 \text{ (mod 92)}
+\end{equation}
+
+As can be seen it holds, hence it would appear that the above is correct.
+
+\item
+Since the modulo is the remainder after the division, this means that the congruence equation from previously must hold to let x "remove" the remainder after taking as many y coins as possible. This allows for a trial and error approach to determine the possible solution space (since we know that there may be a positive amount of each coin):
+
+\begin{equation}
+    7229 - 59 \cdot 43 = 4692
+\end{equation}
+
+\begin{equation}
+    7229 - 59 \cdot (43 + 92) = -736
+\end{equation}
+
+As can be seen, the only acceptable x value from the set is 43, as the next value in line results in a negative sum, which is not possible with positive coinage values. Hence, solving for y:
+
+\begin{equation}
+    y = \frac{7229 - 59 \cdot 43}{92} = 51
+\end{equation}
+
+Thus the set (x, y) = (43, 51) is the only solution to the system.
+
+\end{enumerate}

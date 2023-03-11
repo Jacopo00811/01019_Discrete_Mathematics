@@ -1,0 +1,122 @@
+\section{Exercise E}
+
+\begin{enumerate}
+\item 
+Following the hint from the assignment text, we have the following propositional variables $s$ and $p$ which denotes: 
+\begin{itemize}
+    \item $p$ = "Peter is a truth sayer"
+    \item $s$ = "Signe is a truth sayer"
+\end{itemize}
+
+From Peter, we know that at-least Peter or Signe is a liar. We can formulate the statement with: \\
+$ \neg p \lor \neg s$ \\
+
+To check whether Peter or Signe is the liar, we formulate a statement where Peter is set to be the truth sayer. This can be formulated with following statement:  \\
+$p \leftrightarrow (\neg p \lor \neg s) $ \\
+
+The following truth table can be constructed:
+\begin{center}
+\begin{tabular}{ |c|c||c|c|c|c| } 
+\hline
+$p$ & $s$ & $\neg p$ & $\neg s$ & $\neg p \lor \neg s$ & $p \leftrightarrow (\neg p \lor \neg s) $  \\
+\hline
+\hline
+T & T & F & F & F & F\\
+\hline
+ \textcolor{red}{T} &  \textcolor{red}{F} & \textcolor{red}{F} & \textcolor{red}{T} & \textcolor{red}{T} &  \textcolor{red}{T}\\
+\hline
+F & T & T & F & T & F\\
+\hline
+F & F & T & T & T & F\\
+\hline
+\end{tabular}
+\end{center}
+
+Looking at the table, we can see which values of $p$ and $s$ make the formula true. In conclusion, we can see that Peter is telling the truth and Signe is lying. Hence, Peter is the truth sayer in this case.
+
+\item
+By using the hint from the assignment text, we can set the variables $a$ and $b$ to denote: 
+\begin{itemize}
+    \item $a$ = "Anne is a truth sayer"
+    \item $b$ = "Bob is a truth sayer"
+\end{itemize}
+
+We can formulate the statement with: \\
+$ \neg b \to \neg a$ \\
+
+Again, we can check if Anne is telling the truth by formulating a statement where Anne is set to be the truth sayer. The statement can be formulated with: \\
+$a \leftrightarrow (\neg b \to \neg a) $ \\
+
+From the above equation, we have the following truth table:
+\begin{center}
+\begin{tabular}{ |c|c||c|c|c|c| } 
+\hline
+$a$ & $b$ & $\neg a$ & $\neg b$ & $\neg b \to \neg a$ & $a \leftrightarrow (\neg b \to \neg a) $  \\
+\hline
+\hline
+\textcolor{red}{T} & \textcolor{red}{T} & \textcolor{red}{F} & \textcolor{red}{F} & \textcolor{red}{T} & \textcolor{red}{T}\\
+\hline
+T & F & F & T & F & F\\
+\hline
+F & T & T & F & T & F\\
+\hline
+F & F & T & T & T & F\\
+\hline
+\end{tabular}
+\end{center}
+
+Looking at the table, we can see which values of $a$ and $b$ make the formula true. In conclusion, we can see that Anne and Bob are both telling the truth. Since, if Bob is lying then Anne is also lying and vise versa. Therefore, both Anne and Bob are truth sayers. 
+
+
+\item
+From the assignment text, we have the following propositional variables:
+\begin{itemize}
+    \item $c$ = "Carsten is a truth sayer"
+    \item $d$ = "Diana is a truth sayer"
+    \item $e$ = "Erika is a truth sayer"
+\end{itemize}
+
+From Carsten, we have that only one of the three people are telling the truth. For that reason, we have the following: \\
+$ ((c \land \neg d \land \neg e) \lor (\neg c \land d \land \neg e) \lor (\neg c \land \neg d \land e)) = claim$ \\
+
+However, if Diana tells the truth, which is Carsten's claim regarding only one of them being a truth sayer, it must mean that the claim can only be true if Carsten is a truth sayer. Thereby, Carsten and Diana is a truth sayer if and only if Carsten's claim is true. This can be illustrated with the following equation: \\
+$ d \to (c \to claim)$ \\
+
+There's also the case where Diana is a truth sayer, but Carsten is not telling the truth. This means that there are two truth sayers because Carsten's claim about there only being one truth sayer is false. This can be illustrated with the following:\\
+$ (d \land \neg c) \to e$ \\
+
+Lastly, there is the case where Erika is telling the truth and Diana is lying. This can be illustrated like the following: \\
+$e \leftrightarrow \neg d$ \\
+
+Thus, we have the following combined equation: \\
+$(d \to (c \to claim)) \land (d \land \neg c) \to e) \land (e \leftrightarrow \neg d)$ \\
+
+From the above equation, a truth table can be constructed. In the truth table's last column is called all which represent the combined equation stated above:
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|c|c|c|c|c|c| } 
+\hline
+c & d & e & $\neg c$ & $\neg d$ & $\neg e$ & claim & $ d \to (c \to claim)$ & $e \leftrightarrow \neg d$ & $(d \land \neg c) \to e$ & All \\
+\hline
+\hline
+F & T & T & T & F & F & F & T & F & T & F \\
+\hline
+\textcolor{red}{F} & \textcolor{red}{F} & \textcolor{red}{T} & \textcolor{red}{T} & \textcolor{red}{T} & \textcolor{red}{F} & \textcolor{red}{T} & \textcolor{red}{T} & \textcolor{red}{T} & \textcolor{red}{T} & \textcolor{red}{T} \\
+\hline
+T & T & T & F & F & F & F & F & F & T & F \\
+\hline
+T & T & F & F & F & T & F & F & T & T & F \\
+\hline
+T & F & F & F & T & T & T & T & F & T & F \\
+\hline
+\textcolor{red}{T} & \textcolor{red}{F} & \textcolor{red}{T} & \textcolor{red}{F} & \textcolor{red}{T} & \textcolor{red}{F} & \textcolor{red}{F} & \textcolor{red}{T} & \textcolor{red}{T} & \textcolor{red}{T} & \textcolor{red}{T} \\
+\hline
+F & T & F & T & F & T & T & T & T & F & F \\
+\hline
+F & F & F & T & T & T & F & T & F & T & F \\
+\hline
+\end{tabular}
+\end{center}
+
+It can be seen that are two cases. One where only Erika is a truth sayer, and one where both Erika and Carsten is telling the truth. However, we know know that Diana is lying. Hence, we cannot tell if Carsten is a truth sayer or not. Thus, Erika is the only truth sayer in this case. Therefore, the stranger should go with Erika. 
+
+\end{enumerate}

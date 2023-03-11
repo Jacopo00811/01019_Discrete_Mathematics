@@ -1,0 +1,24 @@
+\section{Exercise 4.1}
+\renewcommand{\labelenumi}{\alph{enumi})}
+\begin{enumerate}
+\item
+We have to show the following holds by using induction:
+\[10^n \equiv 1^n \mbox{\hspace{0.25cm} (mod 9)}\]
+The first thing to determine, when using induction, is the base case. This is done by setting n = 0. Thus, the following occurs:
+\[10^0 \equiv 1^0 \mbox{\hspace{0.25cm} (mod 9)}\]
+\vspace{-8mm}
+\[1 \equiv 1 \mbox{\hspace{0.25cm} (mod 9)}\]
+
+It can now be seen that the base case is correct since 1 is equal to 1. In other words, 1 is congruent with itself. The next step is the induction step. It states that $10^n \equiv 1^n \mbox{ (mod 9)}$ must apply for $n \geq 0$. Therefore, the following induction hypothesis can be stated: $9 | (10^n - 1)$. Thus, the following occurs:
+\[10^{n+1} - 1 = 10 \cdot 10^n - 1\]
+The above can be further extended to the following by splitting it up:
+\[9 \cdot 10^n + (10^n - 1)\]
+Now, it can be seen that we have both $9 \mbox{ }| \mbox{ }(9 \cdot 10^n) \wedge 9\mbox{ }| \mbox{ }(10^n - 1)$. Given that 9 is a part of both equation, it means that it adds to the sum of both equations. In other words, we have shown that the following occurs:
+\[9\mbox{ }| \mbox{ }(10^n - 1) \hspace{0.15cm} \leftrightarrow \hspace{0.15cm} 10^{n+1} \equiv 1 \mbox{ (mod 9)}\]
+For all $n \geq 0$.
+
+\item
+By following Lemma 5.4 from the notes, it can be seen that $k \equiv \alpha \mbox{ (mod 9)}$ can be split so each element of the statement can be its own congruence. Therefore, each congruence can be written on the form $a \cdot 10^n \equiv a \mbox{ (mod 9)}$ which can be shortened into $10^n \equiv 1$. Here, it can be seen that it's the same as in the previous exercise 4.1.a) where it was proven that $10^n \equiv 1$ was correct. Thus, it can be concluded by the help of 4.1.a) and Lemma 5.4 that if one sub-congruence is correct then the whole congruence is correct. In other words, $k \equiv \alpha \mbox{ (mod 9)}$.
+
+
+\end{enumerate}

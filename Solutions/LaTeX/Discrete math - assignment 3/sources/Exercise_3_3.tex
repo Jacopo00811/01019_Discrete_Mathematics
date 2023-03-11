@@ -1,0 +1,51 @@
+\section{Exercise 3.3}
+\renewcommand{\labelenumi}{\alph{enumi})}
+\begin{enumerate}
+\item
+For $P_{0}(x)$, by the first case in the definition, it must be: $P_{0}(x) = 1$
+
+For $P_{1}(x)$, by the second case in the definition, it must be: $P_{1}(x) = 1 - x \cdot P_{0}(x)$. Since $P_{0}(x)$ is known from previously: $P_{1}(x) = 1 - x \cdot P_{0}(x) = 1 - x \cdot 1 = 1 - x$
+
+For $P_{2}(x)$, by the second case in the definition, it must be: $P_{2}(x) = 1 - x \cdot P_{1}(x)$. Since $P_{1}(x)$ is known from previously: $P_{2}(x) = 1 - x \cdot (1 - x) = x^{2} - x + 1$
+
+\item
+It must be shown that: $(1+x) \cdot P_{n}(x) = 1 + (-1)^{n} \cdot x^{n+1}$ for $n >= 0 \And n \in \mathbf{N}$
+
+Now, let n = 0, then: $(1+x) \cdot P_{0}(x) = 1 + (-1)^{0} \cdot x^{0+1}$ Hence: $(1+x) \cdot 1 = 1 + 1 \cdot x^{1}$, then: $1+x = 1 + x$ thus the formula holds for n = 0.
+
+Now, suppose the formula holds for n:
+\begin{equation}
+    (1+x) \cdot P_{n}(x) = 1 + (-1)^{n} \cdot x^{n+1}
+\end{equation}
+
+\begin{equation}
+    P_{n}(x) = \frac{1 + (-1)^{n} \cdot x^{n+1}}{1+x}
+\end{equation}
+
+Now insert the result into the second case of the definition:
+
+\begin{equation}
+    P_{n+1}(x) = 1 - x \cdot P_{n}(x)
+\end{equation}
+
+\begin{equation}
+    P_{n+1}(x) = 1 - x \cdot \frac{1 + (-1)^{n} \cdot x^{n+1}}{1+x}
+\end{equation}
+
+\begin{equation}
+    P_{n+1}(x) = \frac{1 + x}{1 + x} + \frac{-x + (-1)^{n+1} \cdot x^{n+2}}{1+x}
+\end{equation}
+
+\begin{equation}
+    P_{n+1}(x) = \frac{1 + (-1)^{n+1} \cdot x^{n+2}}{1+x}
+\end{equation}
+
+\begin{equation}
+    (1+x) \cdot P_{n+1}(x) = 1 + (-1)^{n+1} \cdot x^{(n+1)+1}
+\end{equation}
+
+Thus, whenever n is true, n + 1 is true as well.
+
+Now, since n = 0 is true, and n + 1 is true whenever n is true, the equation must as a result hold for all n where $n >= 0 \And n \in \mathbf{N}$. Thus the relation has been proven for n and the required domain.
+
+\end{enumerate}

@@ -1,0 +1,35 @@
+% Website with documentations on how to do trees
+% https://latexdraw.com/draw-trees-in-tikz/
+\section{Exercise 3.2} 
+\renewcommand{\labelenumi}{\alph{enumi})}
+\begin{enumerate}
+\item
+From the text description, the recursive definition: \[ 1 \cdot \begin{pmatrix} 3n - 1 \\ 2 \end{pmatrix} \cdot 1 \cdot \begin{pmatrix} 3 \cdot (n - 1) - 1 \\ 2 \end{pmatrix} \cdot ... \cdot 1 \cdot \begin{pmatrix} 2 \\ 2 \end{pmatrix} \] describes the system in question for some n > 0. If n = 0, then there is exactly 1 way to choose a combination, namely to choose the one with none in it (hence the base case in f(n)). From the above recursive definition, each time we increment n by 1, we add this on to our recursion, i.e.:
+\[1 \cdot \begin{pmatrix} 3(n+1) - 1 \\ 2 \end{pmatrix} \cdot 1 \cdot \begin{pmatrix} 3n - 1 \\ 2 \end{pmatrix} \cdot ... \cdot 1 \cdot \begin{pmatrix} 2 \\ 2 \end{pmatrix} \]
+Hence the remaining step can be described as:
+\[ \begin{pmatrix} 3(n + 1) - 1 \\ 2 \end{pmatrix} \cdot f(n) \]
+Thus: \[ \begin{pmatrix} 3n - 1 \\ 2 \end{pmatrix} \cdot f(n-1) \]Now: \[ \begin{pmatrix} 3n - 1 \\ 2 \end{pmatrix} = \frac{(3n-1)!}{2!\cdot(3n-3)!} = \frac{(3n-1)\cdot(3n-2)}{2} \] Hence the definition for f(n) is accurate.
+
+\item In order to prove by induction we need: a base case, an assumption and finally the induction step. \\
+Our base case is found when $n=0$. By the definition from the problem statement:
+\[ f(0)=1 \] Furthermore:
+\[ f(0)=\frac{(3\cdot0)!}{0!\cdot 6^{0}}=\frac{1}{1\cdot 1} = 1 \]
+As can be seen, the base case holds (as the two formulae yield the same result). Now we have to assume that for some $n$ in the natural numbers we have:
+\begin{equation}\label{eq1}
+    f(n) = \frac{(3n)!}{n!6^n}
+\end{equation}
+The last step is to prove the formula for $n+1$:
+\begin{equation}\label{eq2}
+    f(n+1)=\frac{(3n+2)(3n+1)}{2} \cdot f(n)
+\end{equation}
+If equation \ref{eq1} is true then we can substitute it in equation \ref{eq2}:
+\begin{equation}\label{eq3}
+f(n+1)=\frac{(3n+2)(3n+1)}{2} \cdot \frac{(3n)!}{n!6^n}
+\end{equation}
+Now we can multiply numerator and denominator of the right part of equation \ref{eq3} by $3n+3$:
+\[ f(n+1) = \frac{(3n+2)(3n+1)}{2} \cdot \frac{(3n)!}{n!6^n} \cdot \frac{3n+3}{3n+3} \]
+Now putting together all the terms in the numerator we have $(3n+3)!$, which is what we are looking for. For the denominator we have to factor out a $3$ from $3n+3$, unite the result with the factorial already existing, use the property of power in order to get the final result:
+\[ f(n+1)=\frac{(3n+3)!}{(n+1)!6^{n+1}} \]
+Which concludes our proof by induction, as this is equivalent to the next step in the stated sequence (As n = 0 is true and n + 1 is true whenever n is true, thus it holds for all n >= 0 and n is a natural number):
+\[ f(n+1) = \frac{(3 \cdot (n + 1))!}{(n+1)! \cdot 6^{(n+1)}} = \frac{(3n + 3)!}{(n+1)! \cdot 6^{n+1}} \]
+\end{enumerate}

@@ -1,0 +1,38 @@
+% Website with documentations on how to do trees
+% https://latexdraw.com/draw-trees-in-tikz/
+\section{Exercise B} 
+
+\renewcommand{\labelenumi}{\arabic{enumi}.}
+\begin{enumerate}
+\item $\forall x(x = x^2 \to x<0)$ \\
+The above formula can be translated into the following: \\
+For all real numbers, if x is equal to itself raised to the power of 2 then x is negative. \\
+
+The formula is false because x can be equal to 1, which fulfills $x = x^2$, but 1 is not a negative number.\\
+
+\item $\forall x(x > 0 \to x^2 > x)$ \\
+The above formula can be translated into the following: \\
+For all real numbers, if x is positive then x to the power of 2 is always larger than x. \\
+
+The formula is false since x can be equal to either 1 or a given fraction. These numbers will never get bigger than themselves when they're raised to power of 2.\\
+
+\item $\forall x(x = 0 \lor \neg (x + x = x))$ \\
+The above formula can be translated into the following: \\
+For all real numbers, x is equal to zero or x is not equal to itself after being added together twice.  \\
+
+The formula is true due to x either being 0 or a number that's not equal to itself twice. However, 0 is the only number that's equal to itself twice. This formula is also true because $x = 0$ is the only number that's equal to itself twice.\\
+
+\item $\exists x \forall y(x>y)$ \\
+The above formula can be translated into the following: \\
+There exists a real number x that's always larger than all other real numbers y. \\
+
+This formula is false because the x-value will always be chosen first. Therefore, it's always possible to choose a y-value that's larger than the chosen x-value. \\
+
+In essence, regardless of what x you choose, because the number line is infinite, then there will always exist a y, such that y = x + 1.
+
+\item $\forall x \forall y(x>y \to \exists x(x > z \land z > y))$ \\
+The above formula can be translated into the following: \\
+For all real numbers x and y, there exists a real number z which is in-between x and y if x is larger than y. \\
+
+This formula is true since it's always possible to find a number (fraction) that's in-between two given numbers x and y, when x is bigger than y. For example: $z = \frac{x+y}{2}$
+\end{enumerate}

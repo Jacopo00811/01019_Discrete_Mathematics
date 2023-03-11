@@ -1,0 +1,124 @@
+\pagebreak
+\section{Exercise 4.3}
+\renewcommand{\labelenumi}{\alph{enumi})}
+\begin{enumerate}
+\item
+In order to find the set of solutions for $x$ in the system of congruence relations we first have to simplify the second one dividing both sides by 118. Then we will get:
+\[ \begin{cases}
+x \equiv 250 \mod 439 \\
+x \equiv 5 \mod 1121 
+\end{cases} \]
+Before we can use the Chinese reminder theorem we have to check that $ gcd(n_1,\, n_2) = 1$. This can be done using Euclid's algorithm: \\
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c||c|c|}
+  \hline
+$k$ & $r_k$ & $q_k$ \\
+ \hline
+ \hline
+0 & 1121 & - \\
+\hline
+1 & 439 & - \\
+\hline
+2 & 243 & 2 \\
+\hline
+3 & 196 & 1 \\
+\hline
+4 & 47 & 1  \\
+\hline
+5 & 8 & 4 \\
+\hline
+6 & 7 & 5 \\
+\hline
+7 & 1 & 1 \\
+\hline
+8 & 0 & 7 \\
+\hline
+\end{tabular}
+\caption{Euclid's algorithm for the $ gcd(n_1,\, n_2) $}
+\label{Euc}
+\end{table} \\
+It is clear that it is the case that $ gcd(n_1,\, n_2) = 1 $, thus we can use the Chinese remainder theorem. \\
+To use the Chinese remainder theorem we need to evaluate the value for the multiplicative inverses $ u_1 = n_1^{-1} \mod n_2 $ and $ u_2 = n_2^{-1} \mod n_1 $, together with the values:
+\begin{itemize}
+    \item $ n_1 = 439 $
+    \item $ n_2 = 1121 $
+    \item $ b_1 = 250 $
+    \item $ b_2 = 5 $
+\end{itemize}
+To find the two missing values for the multiplicative inverses we can use theorem 5.6 from the textbook; it requires us to find a $t$ that fulfills the relation $ t \cdot a \equiv 1 \mod n $. This can be easily done computing the extended Euclid's algorithm for $ gcd(n_1,\;n_2) $ and $ gcd(n_2,\;n_1) $ in the following two tables: \\
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c||c|c||c|c|}
+  \hline
+$k$ & $r_k$ & $q_k$ & $s_k$ & $t_k$ \\
+ \hline
+ \hline
+0 & 1121 & - & 1 & 0 \\
+\hline
+1 & 439 & - & 0 & 1 \\
+\hline
+2 & 243 & 2 & 1 & -2 \\
+\hline
+3 & 196 & 1 & 1 & 3 \\
+\hline
+4 & 47 & 1 & 2 & -5 \\
+\hline
+5 & 8 & 4 & -9 & 23 \\
+\hline
+6 & 7 & 5 & 47 & -120 \\
+\hline
+7 & 1 & 1 & -56 & \textcolor{red}{143} \\
+\hline
+8 & 0 & 7 & - & - \\
+\hline
+\end{tabular}
+\caption{Euclid's algorithm for $u_1$}
+\label{TabU1}
+\end{table} 
+\newpage
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c||c|c||c|c|}
+  \hline
+$k$ & $r_k$ & $q_k$ & $s_k$ & $t_k$ \\
+ \hline
+ \hline
+0 & 439 & - & 1 & 0 \\
+\hline
+1 & 1121 & - & 0 & 1 \\
+\hline
+2 & 439 & 0 & 1 & 0 \\
+\hline
+3 & 243 & 2 & -2 & 1 \\
+\hline
+4 & 196 & 1 & 3 & -1 \\
+\hline
+5 & 47 & 1 & -5 & 2 \\
+\hline
+6 & 8 & 4 & 23 & -9 \\
+\hline
+7 & 7 & 5 & -120 & 47 \\
+\hline
+8 & 1 & 1 & 143 & \textcolor{red}{-56} \\
+\hline
+9 & 0 & 7 & - & - \\
+\hline
+\end{tabular}
+\caption{Euclid's algorithm for $u_2$}
+\label{TabU2}
+\end{table} 
+As we can see in table \ref{TabU1} the value of $ u_1 = 143 $. To find out the value of $ u_2 $ we need to get the value of $ t $ given (in red) by the algorithm in table \ref{TabU2} and make it positive adding a whole "period", thus it becomes $ u_2 = -56 + 439 = 383 $. We can now proceed to state the solutions which are the same as the congruence equation:
+\[ x \equiv u_1 n_1 b_2 + u_2 n_2 b_1 \mod n_1 n_2 \]
+\[ x \equiv 143\cdot 439 \cdot 5 + 383 \cdot 1121 \cdot 250 \mod 439 \cdot 1121 \]
+Which is equal to:
+\[ x \equiv 107649635 \mod 492119 \]
+The set of solutions for $ x $ can be written in the form: $107649635 + 492119 \mathbb{Z}$
+
+Which simplifies to:
+
+\begin{equation}
+    367693 + 492119 \mathbb{Z}
+\end{equation}
+
+\end{enumerate}

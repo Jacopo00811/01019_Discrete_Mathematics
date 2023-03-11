@@ -1,0 +1,19 @@
+\section{Exercise C}
+Using the given interpretation $\mathbf{R}$ we have:
+\begin{enumerate}
+\item There exists a real number that is not an integer. \\
+The above sentence can be translated into the following: 
+\[ \exists x (\neg I(x))\]
+The formula is true because integers are only a subsets of real numbers. Hence, real numbers also consists of fractions. Thus a counter-model would be: $\frac{2}{3}$ \\
+
+\item There exists a real number that is greater than all integers. \\
+The above sentence can be translated into the following: 
+\[\exists x \forall y (I(y) \to (x > y))\]
+The formula is false because there is always going to be an integer grater than a certain real number. For instance, let $y = \lceil x \rceil + 1$, this value will always be bigger than any chosen value for x and it is a part of the domain. \\
+
+\item Every positive integer is the square of a negative real number. \\
+The above sentence can be translated into the following: 
+\[ \forall x \exists y ((I(x) \land (x > 0)) \to (x=y^2 \land y < 0))\]
+
+The formula is true because every positive integer can be expressed as the square of a negative real number; e.g. $1$ can be expressed as $(-1)^2$, $3$ as $(-\sqrt{3})^2$ and so on. 
+\end{enumerate}
